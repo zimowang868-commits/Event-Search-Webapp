@@ -1,0 +1,4 @@
+runtime: python312
+entrypoint: gunicorn -b :$PORT main:app
+env_variables:
+  TICKETMASTER_API_KEY: "YOUR_TICKETMASTER_API_KEY"

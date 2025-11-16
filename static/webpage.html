@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Events Search</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="page-bg"></div>
+    <main>
+        <section class="card">
+            <h1>Events Search</h1>
+            <div class="divider"></div>
+            <form id="searchForm" novalidate>
+                <div class="row">
+                    <label for="keyword">Keyword<span class="req">*</span></label>
+                    <input id="keyword" name="keyword" type="text" required />
+                </div>
+                <div class="row two-up">
+                    <div class="col">
+                        <label for="distance">Distance (miles)</label>
+                        <input id="distance" name="distance" type="number" min="1" step="1" placeholder="10" />
+                    </div>
+                    <div class="col">
+                        <label for="category">Category<span class="req">*</span></label>
+                        <select id="category" name="category">
+                            <option value="">Default</option>
+                            <option value="Music">Music</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Arts">Arts</option>
+                            <option value="Theatre">Theatre</option>
+                            <option value="Film">Film</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-line">
+                        <label for="location">Location<span class="req">*</span></label>
+                        <label class="checkbox">
+                            <input id="autoDetect" type="checkbox" />
+                            <span>Auto-Detect Location</span>
+                        </label>
+                    </div>
+                    <input id="location" name="location" type="text" />
+                    <div id="locStatus" class="hint"></div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn primary">Search</button>
+                    <button type="button" id="clearBtn" class="btn ghost">Clear</button>
+                </div>
+            </form>
+        </section>
+        <section id="resultsSection" class="results hidden">
+            <div class="table-wrap">
+                <table id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Icon</th>
+                            <th class="sortable" data-key="name">Event</th>
+                            <th class="sortable" data-key="genre">Genre</th>
+                            <th class="sortable" data-key="venue">Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventsBody"></tbody>
+                </table>
+            </div>
+            <div id="noResults" class="empty hidden">No records found</div>
+        </section>
+        <section id="detailsSection" class="hidden">
+            <div id="eventDetails"></div>
+            <div id="venueToggle" class="venue-toggle hidden">
+                <button id="showVenueBtn" type="button" class="btn-link">Show Venue Details</button>
+                <div class="chevron">⌄</div>
+            </div>
+            <div id="venueDetails" class="hidden"></div>
+        </section>
+    </main>
+    <script src="interactions.js"></script>
+</body>
+</html>
