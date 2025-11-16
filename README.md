@@ -1,4 +1,4 @@
-# Event Search Web App (Ticketmaster + Flask)
+# Event Search Web App
 
 This repository contains a small web application that allows users to search for events around a given location using the Ticketmaster Discovery API. It was originally developed as a course assignment and then refactored into a standalone demo project.
 
