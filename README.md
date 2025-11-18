@@ -35,10 +35,16 @@ This project showcases full-stack skills: a Flask backend, a REST API integratio
 
 ```text
 .
-├── main.py              # Flask application and API endpoints
-├── requirements.txt     # Python dependencies
+event-search-webapp/
+├── frontend/
+│   ├── webpage.html     # Main single-page UI
+│   ├── styles.css       # Styling for the page
+│   └── interactions.js  # Frontend logic and API calls
+│
+├── server/
+│   ├── main.py              # Flask application and API endpoints
+│   └── requirements.txt     # Python dependencies
+│
 ├── app.yaml             # (Optional) App Engine / deployment config
-└── static/
-    ├── webpage.html     # Main single-page UI
-    ├── styles.css       # Styling for the page
-    └── interactions.js  # Frontend logic and API calls
+├── .gitignore
+└── README.md
